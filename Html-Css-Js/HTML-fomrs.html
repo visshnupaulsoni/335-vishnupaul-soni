@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML forms</title>
+    <header style="font-size: 24pt; color:white; background-color: black; text-align: center;">HTML forms</header>
+    <hr><div id="logger"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+<script>
+var logg = document.getElementById("logger");
+    clientSideFormProcessor = () => {
+        let formHandle = document.forms["userProfileForm"];
+        logg.innerHTML=
+        `LOGGER: First Name ${formHandle.firstName.value}
+        <br>Password : ${formHandle.mypassword.value}`;
+
+        //password validation example
+        if(formHandle.mypassword.value.length<8){
+          // formHandle.mypassword.style="background-color:red";
+        }$("password").css("background-color","yellow");
+            logg.innerText = logg.innerText + `<br> your music choice ${formHandle.music.value}`;
+
+        //checkbox
+       // alert("no of checkbox ticked"+ formHandle.musicCB.length);
+       let allMusic="";
+        for(let i=0;i<formHandle.musicCB.length;i++){
+            if(formHandle.musicCB[i].checked){
+               // alert("you ticked" + formHandle.musicCB[i].value);
+               allMusic = allMusic +","+formHandle.musicCB[i].value ; 
+                      }
+            
+        };
+        log.innerHTML= log.innerHTML + `<br>you selected ${allmusic}music`;
+
+
+        //processing select list drop down
+        let allfruits="";
+        for(let i=0;i<formHandle.fruits.length;i++){
+            if(formHandle.fruits[i].selected){
+               // alert("you selected" + formHandle.[i].valufruits[i].value);
+               allfruits = allfruits +","+formHandle.fruits[i].value ; 
+                      }
+            
+        };
+        allfruits=allfruits.substring(1);
+        logg.innerHTML=logg.innerHTML + `<br>fruits:${allfruits}`;
+        
+//Text area processing
+logg.innerHTML= logg.innerHTML + `<br> About me:${formHandle.aboutTA.value}`;
+alert("bad people found at index" +formHandle.aboutTA.value.indexof("bad people"))
+if(formHandle.aboutTA.value.indexof("bad people")>0){
+    formHandle.aboutTA.style="color:red";
+};
+//we re satisfied with the form,time to  submit to the backend
+if(formIsGood==true){
+alert("form details valid ,looking good,submit to backend")
+formHandle.submit();
+}else{
+    alert("form details valid, looking bad,not submit t0 backend")
+
+}
+
+   }
+
+</script>
+<body>
+    <hr><br>
+
+    <form name="userProfileForm" action="form-processor.py" method="POST" >
+        <br>First name:  <input type=text name="firstName">
+       <br>Password:  <input type=password name="mypassword">
+
+       <br><br>
+which one  favourite movie? <br>
+<Input type="radio" name="music" value="Action">action<br>
+<Input type="radio" name="music" value="friction">friction<br>
+ <Input type="radio" name="music" value="triller">triller<br>
+<Input type="radio" name="music" value="Romantic">romantic<br>
+
+    <br><br>
+which one  favourite music? <br>
+<Input type="checkbox" name="musicCB" value="meditation"><br>
+<Input type="checkbox" name="musicCB" value="western">western<br>
+ <Input type="checkbox" name="musicCB" value="classic">classic<br>
+<Input type="checkbox" name="musicCB" value="Romantic">Romantic<br>
+
+    <br><br>select your favourite fruit:
+    <select name="fruits" multiple>
+    <option value="apple">apple</option> 
+    <option value="banana">banana</option> 
+     <option value="carrot">carrot</option> 
+</select>
+
+<br><br> Tell me about yourself:<br>
+<input type="text" height="100px" width="none">
+
+
+       <input type="submit" onclick="clientSideFormProcessor(); return false;">
+    </form>
+    
+</body>
+</html>

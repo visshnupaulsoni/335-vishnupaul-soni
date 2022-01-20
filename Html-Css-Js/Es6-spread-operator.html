@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread operator</title>
+</head>
+<script>
+    //var logger =document.getElementById("logger");
+
+    function average(a,b,c){
+        return (a+b+c)/3;
+    }
+
+    //logger.innerHTML = `<br>Average of 10 20 30 is ${average(10,20,30)}` ;
+    document.write(`<br>Average of 10 20 30 is ${average(10,20,30)}`);
+
+    var arr1 =[10,24,30];
+   /* var arr2=[20,30,40];
+    var arr3=[];
+    for (var i=0;i<arr1.length;i++)
+    arr3[i]=arr1[i];
+    for (j=0;j<arr2.length;jQuery++)
+    arr3[i++]=arr2[j];
+
+    arr3[0]=arr1[0]
+    arr3[1]=arr1[1]
+    arr3[2]=arr2[0]
+    arr3[3]*/
+
+
+    // how can we find the avg of elements in arr1
+    var arr1Avg = average(...arr1 );
+    document.write(`<br>Average of array [10 24 30] is ${arr1Avg}}` );
+
+//coding challenge
+var arr5=[2,4,56];
+var arr6=[12,30,5,6];
+var arr7=[];
+var i=0;
+for(i=0;i<arr5.lenght;i++){
+    arr7[i]=arr5[i];
+    document.write(`<br>combined array arr7 is ${arr7}`);
+}
+for (j=0;j<arr6.length;j++){
+arr7[i++]=arr6[j];
+}
+document.write(`<br>combined array arr7 is ${arr7}`);
+document.write(`<br>combined array using  concate is ${arr5.concat(arr6)}`);
+var arrcombined=[ ...arr5, ...arr6];
+document.write(`<br>combined array using ${arrcombined}`);
+
+
+
+
+
+
+</script>
+<body>
+    <header style="font-size: 24pt; color: white; background-color: black; text-align:center">spread operator</header>
+    <div id ="logger">Log statemets</div>
+</body>
+</html>

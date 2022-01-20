@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function</title>
+</head>
+<script>
+    function f1(){
+        document.write(`<hr>inside f1<br>`);
+        }
+        f1();
+
+        //same function above using arrow notation
+        f2=() => document.write(`<hr>inside f2<br>`);
+        f2();
+        
+        //An arrow function that takes two parameter
+        f3=(a) =>{document.write(`<hr>inside f3 a is ${a}<br>`);};
+        f3(10);
+
+        //An arrow function  that takes two paramenter
+        f4=(a,b) => {document.write(`<hr>inside f4  a,b is ${a},${b}<br>`);};
+        f4(5,"abc");
+
+        ///An arrow function  that takes two paramenter and return a value.
+        f5=(a,b) => a+b;//
+        var val1=(15,60);
+        document.write(`<hr>adding values from f5 is ${val1}<br>`);
+
+        ///An arrow function  that takes two paramenter and multiple statements and
+        f6=(a,b) =>{
+            var c=a+b;
+            var d=2*c;
+            return d;
+        };
+        var val2=f6(15,60);
+        document.write(`<hr>addition value frome f6 is ${val2}<br>`);
+
+        ///An arrow function  that takes destruction price from any object
+        // passed to it 
+        const f7=({price}) => document.write(`<hr>inside f7 car price is ${price}`);
+        var car1={ price:500000, color:"red", weight:1000};
+        f7(car1);
+        
+        //arrow function that accenpts a function f and applies them on two
+        //variable a and b
+        f8=(a,b,f) => f(a,b);
+        var val3 =f8(10,15,f5)
+        document.write(`<hr>additon value from f8 using f5 is ${val3}<br>`);
+
+</script>
+
+<body>
+    <header style="font-size: 24pt; color: white; background-color: black; text-align:center"></header>Arrow operator
+</body>
+</html>

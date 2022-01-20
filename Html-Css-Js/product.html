@@ -1,0 +1,41 @@
+<html>
+<script>
+
+class product{
+    constructor(image,pclr,pprice,pdate,pid,ptype){
+     this.image=image;
+    this.color=pclr;
+    this.price=pprice;
+    this.date=pdate;
+    this.id=pid;
+    this.type=ptype;
+
+}
+
+display(){
+    document.write("<br><br>color of product is "+this.color);
+    document.write("<br><br>price of product is "+this.price);
+    document.write("<br><br>date of product is "+this.date);
+    document.write("<br><br>id of product is "+this.id);
+    document.write("<br><br>type of product is "+this.type);
+
+    //document.write("<br<img src="+this .image+"width=100px height=100px");
+    //document.write("<br><br>");
+
+
+}
+}
+
+var p1=new product("C:\Users\jaysa\Downloads\download.jpg","blue",500,2017,1001,"bottle");
+var p2=new product("C:\Users\jaysa\Downloads\home decor.jpg","white",300,2017,1002,"lunchbox");
+var p3=new product("C:\Users\jaysa\Downloads\furniture.jpg","black",50000,2017,1003,"laptop");
+var p4=new product("C:\Users\jaysa\Downloads\clothing.jpg","brown",2000,2017,1004,"desk");
+var p5=new product("C:\Users\jaysa\Downloads\electronics.jpg","blue",500,2017,1005,"frame");
+
+/*p1.display();
+p2.display();
+p3.display();
+p4.display();
+p5.display();*/
+</script>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<form>
+    Select your house color:
+    <input type="color" name="houseColor" vlaue ="rgb"(255,0,0>
+   <br></br>
+
+   <label></label> Select a time for backup:
+    <input type="time" name="scheduledTime" value="23:00" >
+
+    <br></br> select a date to start the back up:
+<input type="date" name="dbaytime" value="2022-01-10"></inputtype>
+
+<br></br>select a date to start the backup:(date and time)
+<input type="week" name="bdaytime">
+
+<br></br>select a week:<input type="week" name="treweekyear"></inputt>
+
+<br></br>Range type(select 1 to 10):
+<input type="range" name="point" min="0" max="5" step="5">
+
+<br> </br>E-mail<input type="mail" name="myyahooEmailID" maxlength="20">
+<input type="submit">
+
+<br></br>quality (between 1and 5):
+<input type="number" name="quality" min="1" max="5">
+
+<br></br>home telephone:<input type="tel" name="hometelephone"pattern="[1-9][1][0-9][2]">
+
+<br></br>add your homepage:<input type="url" namae="homepage">
+<input type="submit">
+
+    <br /><br />
+    <p>Score Card:</p>
+    <p>Physics <meter id="0001meter" name="batsman1" value="65" min="0" max="100">65 out of 100</meter><br>
+    <p>Maths <meter name="batsman2" value="0.6">60%</meter>
+        <br /><br />
+
+        <p>Score Card with thresholds defined:</p>
+       <p>Physics <meter  value="35" min="0" max="100" low="40">35 out of 100 (Yellow in
+                Opera,FF )</meter>
+        <p>Maths <meter value="0.76" high="60">76% (Green in Opera,FF )</meter>
+        <p>Chemistry <meter value="96" low="90" high="94" max="100">96% (Red in Opera,FF
+                )</meter>
+    
+        <input type="submit">
+        <br></br>
+<progress> </progress>
+<br></br>
+<datalist id="rowserOptions">
+    <option value="intenet explorer">
+    <option value="firefox">
+    <option value="chrome">
+    <option value="microsoft edge">
+</datalist>
+
+<form aciton="keygen-feedback.php" method="GET">
+    username:<input type="text" name="name"><br></br>
+    Encryption:<keygen name="security"><br></br>
+    <input type="submit">
+</form>
+
+<br /><br /> Output Contro demo
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    0<input type="range" name="b" value="50" />100 +
+    <input type="number" name="a" value="10" /> =
+    <output name="result"></output>
+</form>
+
+Defragmentation status:<progress min="100" value="70"></progress>
+check up status:<progres max="100" value="40"></progres>
+
+ 
+<br><br /> Output Contro demo
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    0<input type="range" name="b" value="50" />100 +
+    <input type="number" name="a" value="10" /> =
+    <output name="result"></output>
+ 
+<script>
+    alert("Meter value :"+ document.getElementById("0001meter").value);
+    document.getElementById("0001meter").value = 100;
+ 
+</script>
+
+</html>

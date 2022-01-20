@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch API</title>
+    <header style="font-size: 14pt; color:white; background-color: black; text-align: center;display:inline">fetch API</header>
+    <hr>
+    <div id="logger"></div>
+    <hr>
+</head>
+<script>
+    var logg = document.getElementById("logger");
+    sendAJaxRequest =() =>{
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json())
+        .then(res => logg.innerHTML=res[7].address.city);
+
+    };
+//fetch API for posting form content
+sendAJaxRequest = () =>{
+   /* alert("1"+document.forms["form1"].title.value);
+    var bodyContent = {
+            userId: "1",
+            title: document.forms["form1"].title1.value,
+            body: document.forms["form1"].body1.value
+        };
+ 
+        var stringifiedBody = JSON.stringify(bodyContent);
+        alert("2 " + stringifiedBody);*/
+    fetch(
+        "https://jsonplaceholder.typicode.com/posts",
+        {
+            method:"POST",
+            body : stringifiedBOdy({
+                userId: "1",
+            title: document.forms["f1form1"].n1.value,
+            body: document.forms["f1form1"].n2.value
+        }), 
+            header:{"content-type":"applicaion/json"}
+        }
+    )
+    .then(res => res.json())
+    .then(res => logg.innerHTML =
+    `Response of posting.id=${res.id} id=${res.title}`);
+};
+ 
+</script>
+<body>
+    <P>Fetch API to get content.click to fetch data using fetch API</P>
+    <button onclick="sendAJaxRequest();">Click here to send an fetch asyncronous request</button>
+<br><br>
+<form name="f1form">
+    Add new comment here:
+    <P>Title:<input type="text" name="n1">
+        <p>Body (comment) <input type ="text" name="n2">
+            </form>
+<P>Fetch API to post content.click to fetch data using fetch API</P>
+<button onclick="sendAJaxPostRequest();">Click here to send an fetch asyncronous request</button>
+ 
+</body>
+</html>

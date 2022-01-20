@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow  using OD</title>
+</head>
+<scripts src="product.js"></scripts>
+<script>
+
+    var product=[p1,p2,p3,p4,p5];
+     var all="";
+     f7 = ({image, price}) =>  `<img src=${image} width=100px height=100px<br>product price ${pprice}`;
+        for (var i=0;i<product.length;i++){
+     all=all+ `<p> ${f7(product[i])}</p>`;
+
+    }
+    all=`<section>${all}</section>`;
+    document.write(all);
+</script>
+<body>
+    
+</body>
+</html>
