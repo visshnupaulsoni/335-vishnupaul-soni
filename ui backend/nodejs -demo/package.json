@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "chalk": "^5.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.3"
+  }
+}
